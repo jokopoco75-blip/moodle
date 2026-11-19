@@ -8,7 +8,6 @@ services:
     region: frankfurt
     # Требование проекта: Node >= 22.13 (встроенный модуль node:sqlite).
     # Если Render не примет точную версию, выберите в UI любую 22.x не ниже 22.13.
-    nodeVersion: "22.13.0"
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
