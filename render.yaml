@@ -1,0 +1,24 @@
+# Render Blueprint: деплой Node-сервера из GitHub-репозитория.
+# В Render: New -> Blueprint -> выбрать этот репозиторий.
+services:
+  - type: web
+    name: kursor-learning-platform
+    runtime: node
+    plan: free
+    region: frankfurt
+    # Требование проекта: Node >= 22.13 (встроенный модуль node:sqlite).
+    # Если Render не примет точную версию, выберите в UI любую 22.x не ниже 22.13.
+    nodeVersion: "22.13.0"
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-6-astra
