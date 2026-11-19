@@ -1,0 +1,15 @@
+{
+  "name": "kursor-learning-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Самостоятельная учебная платформа на Node.js и SQLite",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "start:plain": "node server.mjs",
+    "check": "node --check server.mjs"
+  }
+}
